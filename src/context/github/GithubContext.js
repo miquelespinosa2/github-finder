@@ -14,22 +14,11 @@ export const GithubProvider = ({children}) => {
    loading: false
  }
 
-
  const [state, dispatch] = useReducer(githubReducer, initialState)
-
-
-
-
-
-
-
-  //clearing users from state
-  const clearUsers = () => dispatch({type: 'CLEAR_USERS'})
 
   return <GithubContext.Provider value={{
     ...state,
     dispatch,
-    clearUsers,
   }}>
     {children}
   </GithubContext.Provider>
